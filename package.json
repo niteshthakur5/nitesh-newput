@@ -1,0 +1,30 @@
+{
+  "name": "dropp-sdk",
+  "version": "0.0.4",
+  "description": "Javascript SDK to implement Dropp",
+  "main": "src/dropp.js",
+  "scripts": {
+    "test": "mocha",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niteshthakur5/nitesh-newput.git"
+  },
+  "author": "Nitesh Thakur <nthakur@opencrowd.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/niteshthakur5/nitesh-newput/issues"
+  },
+  "homepage": "https://github.com/niteshthakur5/nitesh-newput#readme",
+  "devDependencies": {
+    "mocha": "^8.3.2",
+    "webpack": "^5.27.2",
+    "webpack-cli": "^4.5.0"
+  },
+  "dependencies": {
+    "buffer": "^6.0.3",
+    "node-forge": "^0.10.0",
+    "tweetnacl": "^1.0.3"
+  }
+}
