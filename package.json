@@ -1,6 +1,6 @@
 {
   "name": "dropp-sdk",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Javascript SDK to implement Dropp",
   "main": "src/dropp.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "url": "git+https://github.com/niteshthakur5/nitesh-newput.git"
   },
   "author": "Nitesh Thakur <nthakur@opencrowd.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/niteshthakur5/nitesh-newput/issues"
   },
