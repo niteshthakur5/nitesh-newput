@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- <script src="./dropp.min.js"></script> -->
+    <script src="./dist/dropp-frontend.min.js"></script>
+  </head>
+<body>
+  <script>
+    window.onload = function() {
+      var hrefLinkQuery = {
+        thumbnail : "https://www.filmfeeder.co.uk/wp-content/uploads/2020/10/9916_7163.jpg",
+        url : "http://localhost:3000/watch1",
+        title : "UPGRADE : THE TRIAL OF CHICAGO 7 ( 4K )",
+        description : "The film is based on the infamous 1969 trial of seven defendants charged by the federal government with conspiracy and more, arising from the countercultural protests in Chicago at the 1968 Democratic National Convention.",
+        reference : "REDIST1002",
+        type : "video",
+        amount : 1.1999,
+        currency : "USD",
+        merchantAccount : "0.0.319579"
+      }
+      // // var test = Dropp.prepareDroppPurchaseData(hrefLinkQuery);
+      // // var aElem = document.querySelectorAll(".dropp-payment");
+      // // aElem[0].setAttribute('data-dropp-purchase', test);
+      // // Dropp.init();
+      Dropp.createPurchaseButton({parentElementId: "parent", purchaseData: hrefLinkQuery});
+    //   Dropp.init();
+    };
+
+    // function openWallet() {
+    //   Dropp.openWalletOrExtension("thumbnail=https%3A%2F%2Fwww.filmfeeder.co.uk%2Fwp-content%2Fuploads%2F2020%2F10%2F9916_7163.jpg&url=http%3A%2F%2Flocalhost%3A3000%2Fwatch1&title=UPGRADE%20%3A%20THE%20TRIAL%20OF%20CHICAGO%207%20(%204K%20)&description=The%20film%20is%20based%20on%20the%20infamous%201969%20trial%20of%20seven%20defendants%20charged%20by%20the%20federal%20government%20with%20conspiracy%20and%20more%2C%20arising%20from%20the%20countercultural%20protests%20in%20Chicago%20at%20the%201968%20Democratic%20National%20Convention.&reference=REDIST1002&type=video&amount=2.5&currency=USD&merchantAccount=0.0.319579");
+    // }
+  </script>
+
+<h1>Test links for Dropp Integration</h1>
+  <!-- <div>
+    Link created with class 'dropp-payment':
+    <a class="dropp-payment" style="cursor:pointer;text-decoration:underline;color:red">pay with dropp</a>
+  </div>
+
+  <div>
+    Button created with data property 'data-dropp-purchase':
+    <Button data-dropp-purchase="thumbnail=https%3A%2F%2Fwww.filmfeeder.co.uk%2Fwp-content%2Fuploads%2F2020%2F10%2F9916_7163.jpg&url=http%3A%2F%2Flocalhost%3A3000%2Fwatch1&title=UPGRADE%20%3A%20THE%20TRIAL%20OF%20CHICAGO%207%20(%204K%20)&description=The%20film%20is%20based%20on%20the%20infamous%201969%20trial%20of%20seven%20defendants%20charged%20by%20the%20federal%20government%20with%20conspiracy%20and%20more%2C%20arising%20from%20the%20countercultural%20protests%20in%20Chicago%20at%20the%201968%20Democratic%20National%20Convention.&reference=REDIST1002&type=video&amount=2.5&currency=USD&merchantAccount=0.0.319579" class="dropp-payment" style="cursor:pointer;color:white;background-color: #197DC2;padding: 5px;">pay $2.5</Button>
+  </div>
+
+  <div>
+    Link created with data property 'data-dropp-purchase':
+    <a data-dropp-purchase="thumbnail=https%3A%2F%2Fwww.filmfeeder.co.uk%2Fwp-content%2Fuploads%2F2020%2F10%2F9916_7163.jpg&url=http%3A%2F%2Flocalhost%3A3000%2Fwatch1&title=UPGRADE%20%3A%20THE%20TRIAL%20OF%20CHICAGO%207%20(%204K%20)&description=The%20film%20is%20based%20on%20the%20infamous%201969%20trial%20of%20seven%20defendants%20charged%20by%20the%20federal%20government%20with%20conspiracy%20and%20more%2C%20arising%20from%20the%20countercultural%20protests%20in%20Chicago%20at%20the%201968%20Democratic%20National%20Convention.&reference=REDIST1002&type=video&amount=1.1999&currency=USD&merchantAccount=0.0.319579" style="cursor:pointer;text-decoration:underline;color:red">pay with dropp</a>
+  </div> -->
+
+  <div >
+
+    <a class="dropp-payment" data-amount="2" data-title="Title of the book" data-type="BOOK" data-merchant-id="0.0.311454" data-reference="123abc" data-thumbnail="https://st2.depositphotos.com/1105977/5461/i/450/depositphotos_54615585-stock-photo-old-books-on-wooden-table.jpg/" data-description="Test Description" data-callback-url="http://my-server-url.com/handlePayment" >Pay with Dropp</a>
+
+  <div id="parent">
+    Link created with parentElementId:
+  </div>
+
+<!--
+  <div >
+    Open wallet directly with runtime data:
+    <a href="javascript:void(0);" onclick="openWallet();" style="cursor:pointer;text-decoration:underline;color:red">pay with dropp</a>
+  </div> -->
+
+
+  <!-- <div>dynamic:</div>
+
+  <script type="text/javascript">
+
+    var dynamicPurchaseData = {
+      "thumbnail": "https://www.filmfeeder.co.uk/wp-content/uploads/2020/10/9916_7163.jpg",
+      "url": "https://dropptest.cloudaccess.host/?page_id=16",
+      "title": "UPGRADE : THE TRIAL OF CHICAGO 7 ( 4K )",
+      "description": "The film is based on the infamous 1969 trial of seven defendants charged by the federal government with conspiracy and more, arising from the countercultural protests in Chicago at the 1968 Democratic National Convention.",
+      "reference": "REDIST1002",
+      "type": "video",
+      "amount": 10,
+      "currency": "USD",
+      "merchantAccount": "0.0.319579"
+    }
+
+    function priceChange(newPrice) {
+      dynamicPurchaseData.amount = parseInt(newPrice, 10);
+      Dropp.createPurchaseButton({parentElementId: "dynamic-price-btn", purchaseData: dynamicPurchaseData});
+    }
+
+    window.onload = function() {
+      Dropp.createPurchaseButton({parentElementId: "dynamic-price-btn", purchaseData: dynamicPurchaseData});
+    }
+
+    var hrefLinkQuery = {
+        thumbnail : "https://www.filmfeeder.co.uk/wp-content/uploads/2020/10/9916_7163.jpg",
+        url : "http://localhost:3000/watch1",
+        title : "UPGRADE : THE TRIAL OF CHICAGO 7 ( 4K )",
+        description : "The film is based on the infamous 1969 trial of seven defendants charged by the federal government with conspiracy and more, arising from the countercultural protests in Chicago at the 1968 Democratic National Convention.",
+        reference : "REDIST1002",
+        type : "video",
+        amount : 1.1999,
+        currency : "USD",
+        merchantAccount : "0.0.319579"
+      }
+      // var test = Dropp.prepareDroppPurchaseData(hrefLinkQuery);
+      // var aElem = document.querySelectorAll(".dropp-payment");
+      // aElem[0].setAttribute('data-dropp-purchase', test);
+      // Dropp.init();
+      Dropp.createPurchaseButton({parentElementId: "parent", purchaseData: hrefLinkQuery});
+
+    </script>
+
+  <button onClick="priceChange(10);">$10</button>
+  <button onClick="priceChange(20);">$20</button>
+  <button onClick="priceChange(30);">$30</button>
+  <button onClick="priceChange(40);">$40</button>
+  <button onClick="priceChange(50);">$50</button>
+
+  <div id="dynamic-price-btn"></div>
+
+  <h3>Paypal button (Smart Button): with dropdown prices </h3>
+  <div id="smart-button-container">
+    <div style="text-align: center"><label for="description">test payment </label><input type="text" name="descriptionInput" id="description" maxlength="127" value=""></div>
+      <p id="descriptionError" style="visibility: hidden; color:red; text-align: center;">Please enter a description</p>
+    <div style="text-align: center"><label for="amount">Fee </label><input name="amountInput" type="number" id="amount" value="" ><span> USD</span></div>
+      <p id="priceLabelError" style="visibility: hidden; color:red; text-align: center;">Please enter a price</p>
+    <div id="invoiceidDiv" style="text-align: center; display: none;"><label for="invoiceid">test_fee_variable </label><input name="invoiceid" maxlength="127" type="text" id="invoiceid" value="" ></div>
+      <p id="invoiceidError" style="visibility: hidden; color:red; text-align: center;">Please enter an Invoice ID</p>
+    <div style="text-align: center; margin-top: 0.625rem;" id="paypal-button-container"></div>
+  </div>
+  <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD" data-sdk-integration-source="button-factory"></script>
+  <script>
+  function initPayPalButton() {
+    var description = document.querySelector('#smart-button-container #description');
+    var amount = document.querySelector('#smart-button-container #amount');
+    var descriptionError = document.querySelector('#smart-button-container #descriptionError');
+    var priceError = document.querySelector('#smart-button-container #priceLabelError');
+    var invoiceid = document.querySelector('#smart-button-container #invoiceid');
+    var invoiceidError = document.querySelector('#smart-button-container #invoiceidError');
+    var invoiceidDiv = document.querySelector('#smart-button-container #invoiceidDiv');
+
+    var elArr = [description, amount];
+
+    if (invoiceidDiv.firstChild.innerHTML.length > 1) {
+      invoiceidDiv.style.display = "block";
+    }
+
+    var purchase_units = [];
+    purchase_units[0] = {};
+    purchase_units[0].amount = {};
+
+    function validate(event) {
+      return event.value.length > 0;
+    }
+
+    paypal.Buttons({
+      style: {
+        color: 'gold',
+        shape: 'rect',
+        label: 'paypal',
+        layout: 'vertical',
+
+      },
+
+      onInit: function (data, actions) {
+        actions.disable();
+
+        if(invoiceidDiv.style.display === "block") {
+          elArr.push(invoiceid);
+        }
+
+        elArr.forEach(function (item) {
+          item.addEventListener('keyup', function (event) {
+            var result = elArr.every(validate);
+            if (result) {
+              actions.enable();
+            } else {
+              actions.disable();
+            }
+          });
+        });
+      },
+
+      onClick: function () {
+        if (description.value.length < 1) {
+          descriptionError.style.visibility = "visible";
+        } else {
+          descriptionError.style.visibility = "hidden";
+        }
+
+        if (amount.value.length < 1) {
+          priceError.style.visibility = "visible";
+        } else {
+          priceError.style.visibility = "hidden";
+        }
+
+        if (invoiceid.value.length < 1 && invoiceidDiv.style.display === "block") {
+          invoiceidError.style.visibility = "visible";
+        } else {
+          invoiceidError.style.visibility = "hidden";
+        }
+
+        purchase_units[0].description = description.value;
+        purchase_units[0].amount.value = amount.value;
+
+        if(invoiceid.value !== '') {
+          purchase_units[0].invoice_id = invoiceid.value;
+        }
+      },
+
+      createOrder: function (data, actions) {
+        return actions.order.create({
+          purchase_units: purchase_units,
+        });
+      },
+
+      onApprove: function (data, actions) {
+        return actions.order.capture().then(function (details) {
+          alert('Transaction completed by ' + details.payer.name.given_name + '!');
+        });
+      },
+
+      onError: function (err) {
+        console.log(err);
+      }
+    }).render('#paypal-button-container');
+  }
+  initPayPalButton();
+  </script>
+
+  <h3>Paypal button (Buy Now): with dropdown prices </h3>
+
+  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+    <input type="hidden" name="cmd" value="_xclick">
+    <input type="hidden" name="business" value="nn@gmail.com">
+    <input type="hidden" name="lc" value="US">
+    <input type="hidden" name="button_subtype" value="services">
+    <input type="hidden" name="no_note" value="0">
+    <input type="hidden" name="currency_code" value="USD">
+    <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynow_LG.gif:NonHostedGuest">
+    <table>
+    <tr><td><input type="hidden" name="on0" value="Colors">Colors</td></tr><tr><td><select name="os0">
+      <option value="Red">Red $5.00 USD</option>
+      <option value="White">White $3.00 USD</option>
+      <option value="Purple">Purple $7.00 USD</option>
+    </select> </td></tr>
+    </table>
+    <input type="hidden" name="option_select0" value="Red">
+    <input type="hidden" name="option_amount0" value="5.00">
+    <input type="hidden" name="option_select1" value="White">
+    <input type="hidden" name="option_amount1" value="3.00">
+    <input type="hidden" name="option_select2" value="Purple">
+    <input type="hidden" name="option_amount2" value="7.00">
+    <input type="hidden" name="option_index" value="0">
+    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+    </form>
+
+  <h3>Paypal button (Shopping Cart): with dropdown prices </h3>
+
+  <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
+    <input type="hidden" name="cmd" value="_cart">
+    <input type="hidden" name="business" value="nn@gmail.com">
+    <input type="hidden" name="lc" value="US">
+    <input type="hidden" name="item_name" value="Shirt">
+    <input type="hidden" name="button_subtype" value="products">
+    <input type="hidden" name="no_note" value="0">
+    <input type="hidden" name="currency_code" value="USD">
+    <input type="hidden" name="add" value="1">
+    <input type="hidden" name="bn" value="PP-ShopCartBF:btn_cart_LG.gif:NonHostedGuest">
+    <table>
+    <tr><td><input type="hidden" name="on0" value="Color">Color</td></tr><tr><td><select name="os0">
+      <option value="White">White $2.00 USD</option>
+      <option value="Red">Red $4.00 USD</option>
+      <option value="Purple">Purple $6.00 USD</option>
+    </select> </td></tr>
+    </table>
+    <input type="hidden" name="option_select0" value="White">
+    <input type="hidden" name="option_amount0" value="2.00">
+    <input type="hidden" name="option_select1" value="Red">
+    <input type="hidden" name="option_amount1" value="4.00">
+    <input type="hidden" name="option_select2" value="Purple">
+    <input type="hidden" name="option_amount2" value="6.00">
+    <input type="hidden" name="option_index" value="0">
+    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+    </form> -->
+</body>
+</html>
